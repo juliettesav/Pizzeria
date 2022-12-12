@@ -4,20 +4,17 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Pizza(models.Model):
-    text = models.CharField(max_length=200)
+    pizza_name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.text 
+        return self.pizza_name
 
-class Entry(models.Model): 
+class Topping(models.Model): 
     item = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-    text = models.TextField(max_length=100)
-    #date_added = models.DateTimeField(auto_now_add=True)
+    topping_name = models.TextField(max_length=100)
 
-    class Meta: 
-        verbose_name_plural = 'entries'
+    #class Meta: 
+    #    verbose_name_plural = 'entries'
 
     def __str__(self):
         return self.text
-    #def __str__(self):
-    #    return f"{self.text[:50]}...."

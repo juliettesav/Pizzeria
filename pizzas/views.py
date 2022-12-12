@@ -15,7 +15,7 @@ def menu(request):
 def item(request, item_id):
     p = Pizza.objects.get(id=item_id)
     
-    entries = Entry.objects.filter(item=p)
+    entries = Topping.objects.filter(item=p)
 
     context = {'item':p, 'entries':entries}
     
