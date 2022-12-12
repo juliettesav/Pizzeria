@@ -20,4 +20,3 @@ def item(request, item_id):
     context = {'item':p, 'entries':entries}
     
     return render(request, 'pizzas/item.html', context)
-    

@@ -15,11 +15,11 @@ print(menu)
 #    print(p)
 #    print(p.text)
 #    print(p.date_added)
-
+ 
 p = Pizza.objects.get(id=1)
 print(p)
 
-entries = Entry.objects.filter(item=p)
+entries = Topping.objects.filter(item=p)
 
 for e in entries: 
     print(e)

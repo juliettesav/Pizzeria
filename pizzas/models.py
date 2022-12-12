@@ -13,8 +13,12 @@ class Topping(models.Model):
     item = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     topping_name = models.TextField(max_length=100)
 
-    #class Meta: 
-    #    verbose_name_plural = 'entries'
-
     def __str__(self):
-        return self.text
+        return self.topping_name
+
+class Photo(models.Model):
+    photo = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    photo_file = models.ImageField(null=True)
+
+    #def __str__(self):
+    #    return self.photo_file
